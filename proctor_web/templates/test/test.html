@@ -1,0 +1,11 @@
+{% extends "../base.html" %}
+{% block content %}
+{% for item in questions %}
+   
+    <p>{{ item.question }}</p>
+     {% for answer in item.answer_set.all %}
+        <p><input type="radio" name="field">{{ answer.name }}</p>
+         
+     {% endfor %}
+{% endfor %}
+ {% endblock content %}

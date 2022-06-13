@@ -1,0 +1,36 @@
+
+    {% extends "../base.html" %}
+    {% block content %}
+    
+    <div class="jumbotron vertical-center" >
+    <div class="container text-center" style="width:500px;margin-top:200px">
+    <div>
+      <h3>Регистрация</h3>
+     <form class="form-signin" method="POST">
+      {% if error %}
+        <div style="color:red;">{{ error }}</div>
+      {% endif %}
+      {% csrf_token %}
+      <label for="inputEmail" class="sr-only">Email</label>
+       <br />
+              <br />
+      <input type="text" name="username" id="inputEmail" class="form-control" placeholder="Логин" required autofocus="">
+      <br />
+      <br />
+      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus="">
+      <br />
+       <br />
+      <label for="inputPassword" class="sr-only">Пароль</label>
+             <br />
+       <br />
+      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Введите пароль" required>
+       <br />
+        <br />
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Регистрация</button>
+   
+    </form>
+    <div>
+    </div> 
+    </div>
+    {% endblock content %}
+  
